@@ -47,6 +47,16 @@ main h1::first-letter {
     margin: 20px 0;
 }
 
+#post-container {
+    margin: 1.2em 0;
+    color: blueviolet;
+}
+
+#comment-form {
+    margin: 1.2em 0;
+    
+}
+
 #tituloPostForm {
     color: blueviolet;
     margin-bottom: .5em;
