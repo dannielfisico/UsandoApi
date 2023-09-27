@@ -91,13 +91,15 @@ form textarea {
 }
 form input:focus,
 form textarea:focus {
-   
-    background-color: rgba(137, 43, 226, 0.418);
     
+    background-color: rgba(137, 43, 226, 0.418);
+    border: 2px solid blueviolet;
+    outline: none;
 }
 form input::placeholder,
 form textarea::placeholder {
     color: blueviolet;
+
     
 }
 
