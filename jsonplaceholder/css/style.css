@@ -25,6 +25,17 @@ footer {
 
 main {
     flex-grow: 1;
+    padding: 20px;
+}
+
+main h1 {
+    text-decoration: underline;
+    color: blueviolet;
+    margin-bottom: 1em;
+}
+
+main h1::first-letter {
+    color: red;
 }
 
 footer {
