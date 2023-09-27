@@ -49,6 +49,7 @@ main h1::first-letter {
 
 #tituloPostForm {
     color: blueviolet;
+    margin-bottom: .5em;
 }
 
 a, input[type='submit'] {
@@ -92,7 +93,7 @@ form textarea {
 form input:focus,
 form textarea:focus {
     
-    background-color: rgba(137, 43, 226, 0.418);
+    background-color: rgba(137, 43, 226, 0.178);
     border: 2px solid blueviolet;
     outline: none;
 }
@@ -101,6 +102,10 @@ form textarea::placeholder {
     color: blueviolet;
 
     
+}
+
+textarea {
+    resize: none;
 }
 
 footer {

@@ -17,15 +17,15 @@
         <div id="post" class="hide2">
             <div id="loading">Carregando post...</div>
             <div id="posts-container" class="hide"></div>
-            <h2 id="tituloPostForm">Comentários:</h2>
-            <form id="comment-form">
+            <form id="comment-form" class="hide">
+                <h2 id="tituloPostForm">Comentários:</h2>
                 <div>
                     <label for="name">Título:</label>
-                    <input type="text" name="name" id="name" placeholder="Digite o título do seu comentário" required>
+                    <input type="text" name="name" id="name" placeholder="Digite o título do seu comentário" autocomplete="off" required>
                 </div>
                 <div>
                     <label for="email" name="email" id="email">E-mail:</label>
-                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" autocomplete="off" required>
                 </div>
                 <div>
                     <label for="body">Seu comentário:</label>
