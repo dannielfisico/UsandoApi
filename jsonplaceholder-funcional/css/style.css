@@ -1,0 +1,118 @@
+* {
+    font-family: Helvetica;
+}
+
+body {
+    padding: 20px;
+}
+
+h1 {
+    border-bottom: #007bff 4px solid;
+    color: #007bff;
+}
+
+h2 {
+    background-color: #007bff;
+    padding: 3px;
+    color: #f0eded;
+}
+
+p {
+    text-align: justify;
+    text-indent: 16px;
+    
+}
+
+span {
+    background-color:  #f0eded;;
+    color: #007bff;
+    margin: 0 20px 0 20px;
+    padding: 3px 20px 3px 20px;
+        
+}
+
+h1::first-letter {
+    color: rgb(255, 0, 0);
+}
+h2::first-letter {
+    font-size: 1.3em;
+    text-transform: uppercase;
+}
+
+.hide {
+    display: none;
+}
+
+/* h2 a::before{
+    content: ">> ";
+} */
+
+
+
+h2 a{
+    color: #f7f2f2;
+    background-color: rgb(255, 0, 0);
+    padding:  2px 5px;
+    margin-left: 15px;
+    text-decoration: none;
+    opacity: 1;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+}
+
+h3 {
+    color: #fdfdfd;
+    
+    width: fit-content;
+    background-color: red;
+    padding: 3px;
+}
+
+h3::first-letter {
+    text-transform: uppercase;
+}
+
+h5::before {
+    content: "E-mail: ";
+}
+
+a, input[type='submit']{
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    opacity: 0.7;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+}
+
+a:hover,
+input[type='submit']:hover {
+    opacity: 1;
+}
+
+form {
+    padding: 15px;
+    display: inline;
+}
+
+
+form div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5em;
+}
+
+form textarea, 
+form input {
+    resize: none;
+    padding: 5px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
