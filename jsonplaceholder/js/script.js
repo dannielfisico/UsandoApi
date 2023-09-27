@@ -2,6 +2,11 @@ const api = 'https://jsonplaceholder.typicode.com/posts'
 const loading = document.querySelector('#loading')
 const postsContainer = document.querySelector('#posts-container')
 
+//Pegar o id da url caso exista (o id só irá existir se estiver navegando na pagina post.html)
+const urlSearchParams = new URLSearchParams(window.location.search)
+const postId = urlSearchParams.get('id')
+
+
 //Função assincrona para pegar todos os postos usando fetch (lembre-se que se não colocar nenhuma configuração, por padrão ele fará uma requisição do tipo GET)
 
 async function getAllPosts(url) {
@@ -57,4 +62,9 @@ function createAllPosts(post) {
 
 }
 
-getAllPosts(api)
+
+if(!postId){
+    getAllPosts(api)
+    }else{
+        console.log(postId)
+    }
