@@ -1,0 +1,26 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: helvetica;
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+footer {
+    background-color: blueviolet;
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+
+}
+
