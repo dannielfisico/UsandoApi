@@ -1,6 +1,7 @@
 const api = 'https://jsonplaceholder.typicode.com/posts'
 const loading = document.querySelector('#loading')
 const postsContainer = document.querySelector('#posts-container')
+const commentForm = document.querySelector('#comment-form')
 
 //Pegar o id da url caso exista (o id só irá existir se estiver navegando na pagina post.html)
 const urlSearchParams = new URLSearchParams(window.location.search)
@@ -69,6 +70,7 @@ async function getPost(id) {
     loading.classList.toggle('hide')
     postsContainer.classList.toggle('hide')
     createPost(post)
+    commentForm.classList.toggle('hide')
 }
 
  //Função para criar um post individual 
