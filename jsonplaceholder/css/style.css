@@ -120,6 +120,10 @@ form textarea::placeholder {
     
 }
 
+p {
+    color: blueviolet;
+}
+
 textarea {
     resize: none;
 }

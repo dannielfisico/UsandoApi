@@ -1,6 +1,7 @@
 const api = 'https://jsonplaceholder.typicode.com/posts'
 const loading = document.querySelector('#loading')
 const postsContainer = document.querySelector('#posts-container')
+const commentForm = document.querySelector('#comment-form')
 
 //Pegar o id da url caso exista (o id só irá existir se estiver navegando na pagina post.html)
 const urlSearchParams = new URLSearchParams(window.location.search)
@@ -16,7 +17,7 @@ async function getAllPosts(url) {
     console.log(data)
 
     // Criei uma forma para que os dados sejam exibidos após um determinado tempo
-    const tempo = [5]
+    const tempo = [1]
     setInterval(() => {
         loading.innerText = `Organizando os posts e exibindo em: ${tempo[0]}s.`
         if(tempo[0]>0){
@@ -31,7 +32,7 @@ async function getAllPosts(url) {
     setTimeout(() => {
         loading.classList.toggle('hide')
         postsContainer.classList.toggle('hide')
-    }, 6000);
+    }, `${tempo*1200} `);
 
     data.map(post => {
         createAllPosts(post)
@@ -69,6 +70,10 @@ async function getPost(id) {
     loading.classList.toggle('hide')
     postsContainer.classList.toggle('hide')
     createPost(post)
+<<<<<<< HEAD
+=======
+    commentForm.classList.toggle('hide')
+>>>>>>> exercicio01
 }
 
  //Função para criar um post individual 
