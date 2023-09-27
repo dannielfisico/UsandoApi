@@ -43,6 +43,62 @@ main h1::first-letter {
 
 #loading {
     cursor: progress;
+    color: blueviolet;
+    margin: 20px 0;
+}
+
+#tituloPostForm {
+    color: blueviolet;
+}
+
+a, input[type='submit'] {
+    background-color: blueviolet;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    opacity: .7;
+
+}
+
+a:hover, 
+input[type='submit']:hover {
+    opacity: 1;
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .6em;
+    color: blueviolet;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    padding: 3px;
+    border: blueviolet solid 1px;
+    border-radius: 5px;
+    padding: 6px;
+    
+    
+}
+form input:focus,
+form textarea:focus {
+   
+    background-color: rgba(137, 43, 226, 0.418);
+    
+}
+form input::placeholder,
+form textarea::placeholder {
+    color: blueviolet;
+    
 }
 
 footer {

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer></script>
+    <title>Posts - API</title>
+</head>
+<body>
+    <header>
+        <h1 id="titulo">Consumindo API - Blog</h1>
+        <h4 id="subtitulo">jsonplaceholder</h4>
+    </header>
+    <main>
+        <a href="./index.html">Voltar</a>
+        <div id="post" class="hide2">
+            <div id="loading">Carregando post...</div>
+            <div id="posts-container" class="hide"></div>
+            <h2 id="tituloPostForm">Comentários:</h2>
+            <form id="comment-form">
+                <div>
+                    <label for="name">Título:</label>
+                    <input type="text" name="name" id="name" placeholder="Digite o título do seu comentário" required>
+                </div>
+                <div>
+                    <label for="email" name="email" id="email">E-mail:</label>
+                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+                </div>
+                <div>
+                    <label for="body">Seu comentário:</label>
+                    <textarea name="body" id="body" cols="30" rows="10" placeholder="Digite seu comentário aqui..."></textarea>
+                </div>
+                <input type="submit" value="Postar Comentário">
+            </form>
+
+        </div>
+    </main>
+    <footer>
+        <p>Desenvolvido por Daniel Alves (@dannielfisico)</p>
+        <p>2023</p>
+    </footer>
+</body>
+</html>
