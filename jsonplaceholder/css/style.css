@@ -11,9 +11,15 @@ body {
     flex-direction: column;
 }
 
+h1, h4 {
+    color: aliceblue;
+}
+
 header,
 footer {
     background-color: blueviolet;
+    padding: 5px 30px;
+    text-align: center;
 }
 
 main {
@@ -21,6 +27,13 @@ main {
 }
 
 footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
+footer > p {
+    font-weight: bold;
+    color: antiquewhite;
 }
 
