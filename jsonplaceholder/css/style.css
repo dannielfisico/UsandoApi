@@ -21,6 +21,7 @@ footer {
     background-color: blueviolet;
     padding: 5px 30px;
     text-align: center;
+    user-select: none;
 }
 
 main {
@@ -29,13 +30,19 @@ main {
 }
 
 main h1 {
-    text-decoration: underline;
+    text-decoration: dotted underline 5px red;
     color: blueviolet;
     margin-bottom: 1em;
 }
 
 main h1::first-letter {
     color: red;
+    font-size: 1.3em;
+    
+}
+
+#loading {
+    cursor: progress;
 }
 
 footer {
@@ -47,5 +54,9 @@ footer {
 footer > p {
     font-weight: bold;
     color: antiquewhite;
+}
+
+.hide {
+    display: none;
 }
 
