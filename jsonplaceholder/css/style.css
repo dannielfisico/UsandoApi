@@ -52,6 +52,11 @@ main h1::first-letter {
     margin-bottom: .5em;
 }
 
+h2::first-letter {
+    text-transform: uppercase;
+    color: blueviolet;
+}
+
 a, input[type='submit'] {
     background-color: blueviolet;
     font-weight: bold;
@@ -62,6 +67,7 @@ a, input[type='submit'] {
     border: none;
     cursor: pointer;
     opacity: .7;
+    display: inline-block;
 
 }
 
@@ -123,3 +129,7 @@ footer > p {
     display: none;
 }
 
+#posts-container div {
+    margin: 10px 0 30px 0;
+    
+}

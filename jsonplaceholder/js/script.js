@@ -1,5 +1,6 @@
 const api = 'https://jsonplaceholder.typicode.com/posts'
 const loading = document.querySelector('#loading')
+const postsContainer = document.querySelector('#posts-container')
 
 //Função assincrona para pegar todos os postos usando fetch (lembre-se que se não colocar nenhuma configuração, por padrão ele fará uma requisição do tipo GET)
 
@@ -24,7 +25,36 @@ async function getAllPosts(url) {
 
     setTimeout(() => {
         loading.classList.toggle('hide')
+        postsContainer.classList.toggle('hide')
     }, 6000);
+
+    data.map(post => {
+        createAllPosts(post)
+    })
 
 }
 
+
+//Função para criar os posts
+
+function createAllPosts(post) {
+    const div = document.createElement('div')
+    const title = document.createElement('h2')
+    const body = document.createElement('p')
+    const link = document.createElement('a')
+    
+    title.innerText = post.title
+    body.innerText = post.body
+    link.innerText = `Ler o post`
+    link.setAttribute('href',`/post.html?id=${post.id}`)
+
+    div.appendChild(title)
+    div.appendChild(body) 
+    div.appendChild(link)
+
+    postsContainer.appendChild(div)
+    
+
+}
+
+getAllPosts(api)
