@@ -40,7 +40,7 @@ async function getAllPosts(url) {
 }
 
 
-//Função para criar os posts
+//Função para criar todos os posts
 
 function createAllPosts(post) {
     const div = document.createElement('div')
@@ -58,13 +58,38 @@ function createAllPosts(post) {
     div.appendChild(link)
 
     postsContainer.appendChild(div)
-    
+}
+
+// Função para pegar apenas o post específico de cada id
+async function getPost(id) {
+    const responsePost = await fetch(api)
+    const data = await responsePost.json()
+    const post = data[id - 1]
+
+    loading.classList.toggle('hide')
+    postsContainer.classList.toggle('hide')
+    createPost(post)
+}
+
+ //Função para criar um post individual 
+function createPost(post){
+    const div = document.createElement('div')
+    const title = document.createElement('h2')
+    const body = document.createElement('p')
+
+    title.innerText = post.title
+    body.innerText = post.body
+
+    div.appendChild(title)
+    div.appendChild(body)
+    postsContainer.appendChild(div)
 
 }
+
 
 
 if(!postId){
     getAllPosts(api)
     }else{
-        console.log(postId)
+        getPost(postId)
     }
