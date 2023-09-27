@@ -17,7 +17,7 @@ async function getAllPosts(url) {
     console.log(data)
 
     // Criei uma forma para que os dados sejam exibidos após um determinado tempo
-    const tempo = [5]
+    const tempo = [1]
     setInterval(() => {
         loading.innerText = `Organizando os posts e exibindo em: ${tempo[0]}s.`
         if(tempo[0]>0){
@@ -32,7 +32,7 @@ async function getAllPosts(url) {
     setTimeout(() => {
         loading.classList.toggle('hide')
         postsContainer.classList.toggle('hide')
-    }, 6000);
+    }, `${tempo*1200} `);
 
     data.map(post => {
         createAllPosts(post)
