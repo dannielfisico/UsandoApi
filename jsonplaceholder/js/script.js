@@ -44,10 +44,7 @@ async function getAllPosts(url) {
     data.map(post => {
         createAllPosts(post)
     })
-
 }
-
-
 //Função para criar todos os posts
 
 function createAllPosts(post) {
@@ -102,8 +99,7 @@ async function getComments(postId) {
 
     comments.map(comment => {
         createComment(comment)
-    })
-    
+    })   
 }
 
 //Função criar comentários
@@ -123,10 +119,6 @@ function createComment(comment){
     div.appendChild(commentBody)
     div.appendChild(linhaHorizontal)
     commentsContainer.appendChild(div)
-    
-    
-    
-    
 }
 
 //Função limpar campos
@@ -150,7 +142,6 @@ async function postComment(comment){
     
     createComment(data)
 }
-
 
 if(!postId){
     getAllPosts(api)

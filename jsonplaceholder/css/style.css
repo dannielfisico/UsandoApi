@@ -119,6 +119,10 @@ p {
     color: blueviolet;
 }
 
+h3::first-letter{
+    text-transform: uppercase;
+}
+
 textarea {
     resize: none;
 }
