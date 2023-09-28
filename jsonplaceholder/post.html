@@ -14,11 +14,14 @@
     </header>
     <main>
         <a href="./index.html">Voltar</a>
-        <div id="post" class="hide2">
+        <div id="post">
             <div id="loading">Carregando post...</div>
             <div id="posts-container" class="hide"></div>
+            <h2 id="tituloPostForm">Comentários:</h2>
+            <div id="loading-comments">Carregando os comentários...</div>
+            <div id="comments-container" class="hide"></div>
             <form id="comment-form" class="hide">
-                <h2 id="tituloPostForm">Comentários:</h2>
+                <h2 id="tituloPostForm">Poste seu comentário:</h2>
                 <div>
                     <label for="name">Título:</label>
                     <input type="text" name="name" id="name" placeholder="Digite o título do seu comentário" autocomplete="off" required>
@@ -33,8 +36,8 @@
                 </div>
                 <input type="submit" value="Postar Comentário">
             </form>
-
         </div>
+        
     </main>
     <footer>
         <p>Desenvolvido por Daniel Alves (@dannielfisico)</p>

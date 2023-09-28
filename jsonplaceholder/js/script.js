@@ -1,7 +1,9 @@
 const api = 'https://jsonplaceholder.typicode.com/posts'
 const loading = document.querySelector('#loading')
+const loadingComments = document.querySelector('#loading-comments')
 const postsContainer = document.querySelector('#posts-container')
 const commentForm = document.querySelector('#comment-form')
+const commentContainer = document.querySelector('#comments-container')
 
 //Pegar o id da url caso exista (o id só irá existir se estiver navegando na pagina post.html)
 const urlSearchParams = new URLSearchParams(window.location.search)
@@ -88,10 +90,43 @@ function createPost(post){
 
 }
 
+// Função para pegar os comentários
+async function getComments(postId) {
+    const responseComments = await fetch(`${api}/${postId}/comments`)
+    const comments = await responseComments.json()
 
+    comments.map(comment => {
+        createComment(comment)
+    })
+    
+}
+
+//Função criar comentários
+function createComment(comment){
+    const div = document.createElement('div')
+    const commentTitle = document.createElement('h3')
+    const commentBody = document.createElement('p')
+    const email = document.createElement('h5')
+    const linhaHorizontal = document.createElement('hr')
+
+    commentTitle.innerText = comment.name
+    commentBody.innerText = comment.body
+    email.innerText = comment.email
+
+    div.appendChild(commentTitle)
+    div.appendChild(email)
+    div.appendChild(commentBody)
+    div.appendChild(linhaHorizontal)
+    commentContainer.appendChild(div)
+    
+    loadingComments.classList.toggle('hide')
+    commentContainer.classList.toggle('hide')
+    
+}
 
 if(!postId){
     getAllPosts(api)
     }else{
         getPost(postId)
+        getComments(postId)
     }
