@@ -2,8 +2,13 @@ const api = 'https://jsonplaceholder.typicode.com/posts'
 const loading = document.querySelector('#loading')
 const loadingComments = document.querySelector('#loading-comments')
 const postsContainer = document.querySelector('#posts-container')
+const commentsContainer = document.querySelector('#comments-container')
+
+/* Seleção de elementos do formulário */
 const commentForm = document.querySelector('#comment-form')
-const commentContainer = document.querySelector('#comments-container')
+const titleInput = document.querySelector('#name')
+const emailInput = document.querySelector('#email')
+const bodyInput = document.querySelector('#body')
 
 //Pegar o id da url caso exista (o id só irá existir se estiver navegando na pagina post.html)
 const urlSearchParams = new URLSearchParams(window.location.search)
@@ -117,16 +122,57 @@ function createComment(comment){
     div.appendChild(email)
     div.appendChild(commentBody)
     div.appendChild(linhaHorizontal)
-    commentContainer.appendChild(div)
+    commentsContainer.appendChild(div)
     
-    loadingComments.classList.toggle('hide')
-    commentContainer.classList.toggle('hide')
+    
+    
     
 }
+
+//Função limpar campos
+function clearFields() {
+    titleInput.value = "";
+    emailInput.value = "";
+    bodyInput.value = "";
+}
+
+//Função postar comentário
+async function postComment(comment){
+    const response = await fetch(`${api}/${postId}/comments`, {
+        method: 'post',
+        body: comment,
+        headers: {
+            'Content-type': "application/json; charset=UTF-8",
+        }
+    })
+
+    const data = await response.json()
+    
+    createComment(data)
+}
+
 
 if(!postId){
     getAllPosts(api)
     }else{
         getPost(postId)
         getComments(postId)
+        loadingComments.classList.toggle('hide')
+        //Capturar o evento de submit do botão Postar Comentário
+        commentForm.addEventListener('submit', e => {
+            e.preventDefault()
+            //Criar um objeto para armazenar os dados colocados no form
+            let comment = {
+                name: titleInput.value,
+                email: emailInput.value,
+                body: bodyInput.value
+            }
+
+            clearFields() //Esta função limpa os campos do formulario
+
+            comment = JSON.stringify(comment) //Converter o objeto comment em JSON
+
+            postComment(comment) //Função para postar um novo comentário com os dados do form
+
+        })
     }
