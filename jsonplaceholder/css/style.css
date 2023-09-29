@@ -41,7 +41,8 @@ main h1::first-letter {
     
 }
 
-#loading {
+#loading,
+#loading-comments {
     cursor: progress;
     color: blueviolet;
     margin: 20px 0;
@@ -50,6 +51,11 @@ main h1::first-letter {
 #tituloPostForm {
     color: blueviolet;
     margin-bottom: .5em;
+}
+
+h2::first-letter {
+    text-transform: uppercase;
+    color: blueviolet;
 }
 
 a, input[type='submit'] {
@@ -62,12 +68,17 @@ a, input[type='submit'] {
     border: none;
     cursor: pointer;
     opacity: .7;
+    display: inline-block;
 
 }
 
 a:hover, 
 input[type='submit']:hover {
     opacity: 1;
+}
+
+#comment-form {
+    margin-top: 1em;
 }
 
 form > div {
@@ -104,6 +115,14 @@ form textarea::placeholder {
     
 }
 
+p {
+    color: blueviolet;
+}
+
+h3::first-letter{
+    text-transform: uppercase;
+}
+
 textarea {
     resize: none;
 }
@@ -123,3 +142,45 @@ footer > p {
     display: none;
 }
 
+#posts-container div {
+    margin: 10px 0 30px 0;
+    
+}
+
+#comments-container {
+    margin-top: 1.5em;
+}
+
+span::before {
+    content: 'Post ';
+}
+
+span::after {
+    content: ':';
+}
+
+span {
+    background-color: blueviolet;
+    padding: 3px;
+    font-weight: bold;
+    color: beige;
+    margin-right: 20px;
+    min-width: 65px;
+    text-align: right;
+    
+}
+
+#posts-container div {
+    border-bottom: 4px solid blueviolet;
+    border-right: 4px solid blueviolet;
+    background-color: #ccc;
+    box-shadow: 0px 0px 10px black;
+    padding: 10px;    
+}
+
+#posts-container {
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    gap: 15px;
+}
