@@ -35,7 +35,7 @@ function createPost(post){
     postTitle.innerText = `${post.title}`
     postBody.innerText = `${post.body}`
     btnLerPost.innerText = `Ler Post`
-    btnLerPost.setAttribute('href', `./post.html/${post.id}`)
+    btnLerPost.setAttribute('href', `./post.html/?id=${post.id}`)
     
     section.appendChild(postId)
     section.appendChild(postTitle)
