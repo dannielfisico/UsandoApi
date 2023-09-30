@@ -2,7 +2,12 @@ const api = 'https://jsonplaceholder.typicode.com/posts'
 
 const loading = document.querySelector('#loading')
 const postsContainer = document.querySelector('#posts-container')
+const postContainer = document.querySelector('#post-container')
 
+
+const urlSearchParams = new URLSearchParams(document.location.search)
+console.log(`UrlSearchParams = ${urlSearchParams.get('id')}`)
+const postId = urlSearchParams.get('id')
 async function getAllPosts(url) {
     const data = await fetch(url)
     if(data.ok){
@@ -12,10 +17,16 @@ async function getAllPosts(url) {
         const posts = await data.json()
         console.log(posts)
         
-        posts.map(post => createPost(post))            
-        
-       
+        posts.map(post => createPost(post)) 
 
+        /*
+        const caixas = document.querySelectorAll('#posts-container > div')           
+        caixas.forEach(caixa => {
+            const es = document.createElement('a')
+            es.innerText = 'Daniel Alves - GitHub'
+            es.setAttribute('href','https://github.com/dannielfisico')
+            caixa.appendChild(es) 
+        })*/
     } else {
         console.log(`Falhou`)
 
@@ -35,7 +46,7 @@ function createPost(post){
     postTitle.innerText = `${post.title}`
     postBody.innerText = `${post.body}`
     btnLerPost.innerText = `Ler Post`
-    btnLerPost.setAttribute('href', `./post.html/?id=${post.id}`)
+    btnLerPost.setAttribute('href', `./post.html?id=${post.id}`)
     
     section.appendChild(postId)
     section.appendChild(postTitle)
@@ -48,4 +59,16 @@ function createPost(post){
 
 }
 
-getAllPosts(api)
+async function createPost(id) {
+
+}
+
+if(!postId){
+    getAllPosts(api)
+
+} else {
+    console.log(postId)
+}
+
+
+
